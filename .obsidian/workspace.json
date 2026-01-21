@@ -8,16 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "47fe5b3cc4729eef",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
             "id": "f6ba7fdb535854d7",
             "type": "leaf",
             "state": {
@@ -31,8 +21,7 @@
               "title": "Chapter 1"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -89,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "73fff3c59200af9c",
@@ -191,7 +181,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "43edc45987980219",
+  "active": "f6ba7fdb535854d7",
   "lastOpenFiles": [
     "Readings/Chapter 1.md",
     "Readings",
