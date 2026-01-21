@@ -23,7 +23,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Chapter 1.md",
+                "file": "Readings/Chapter 1.md",
                 "mode": "source",
                 "source": false
               },
@@ -191,9 +191,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f6ba7fdb535854d7",
+  "active": "43edc45987980219",
   "lastOpenFiles": [
-    "Chapter 1.md",
+    "Readings/Chapter 1.md",
     "Readings",
     "CSC1019/Chapter_9_Strings.md",
     "Final Project - Campus Event Planner.md",
