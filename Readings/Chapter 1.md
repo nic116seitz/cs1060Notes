@@ -230,4 +230,11 @@ X, Y, Z and num are each an int
 ## Programming langs vs problem solving
 - creating a program involves more than just knowing a programming lang
 - Programming is largely about #problemSolving
-- 
+
+## Precision, logic, and computational thinking
+- Many people find that programming encourages precise logical thought that can lead to better writing and speaking
+- Though process need to build correct precise and logical programs is sometimes called #computationaThinking
+# Why whitespace and precision matter
+## Whitespace and precise formatting
+- #whitespace is blank or newline
+- students output must match exactly (including whitespace)
