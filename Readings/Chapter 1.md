@@ -152,4 +152,82 @@ X, Y, Z and num are each an int
 | **Div X, \#num, Y** | Divides data in location _X_ by _num_, storing result in location _Y_.                |
 | **Jmp Z**           | Tells the processor that the next instruction to execute is in memory location _Z_.   |
 - The programmer-created seq of instructions is called a #program, #application or #app
+## Writing computer programs
+- instructions are represented with 0s and 1s 
+- This is known as #machineInstructions
+- A sequence of machine instructions together form an #executableProgram
+- Because binary is hard to understand programmers created programs called #assemblers to automatically translate human readable instructions 
+- This is known as #assembly language instructions
+- in the 1960s and 70s programmers created #high-levelLanguages to support programming formulas or algorithms
+- To support these high-level languages programmers created #compilers
+- #compilers are programs that automatically translate high-level language programs into executable programs
+
+# IDE
+## Intro to IDEs
+- #IDE stands for integrated development environment
+- Is software that integrate a text editor and a compiler with additional tools
+## Common features
+- Syntax highlighting
+- Automatic delimiter completion
+	- This is the function that adds matching closing bracket
+- Automatic indentation
+- Shortcuts
+- File manager
+## Console and cli in an IDE
+- Ide typically includes a console for user input and program output
+- #console or #terminal is a text-based interface that allows a user to run programs, enter input and view program output
+- A console's #command-lineInterface (CLI) is an interface that allows a user to enter the commands to run programs and work with files
+	- You can run program with command line args
+# Computer tour
+- Computer originally referred to a person that performed computations by hand
+- 40s and 50s this changed to large machiens
+- 70s/80s the term expanded to refer to home/office computers 
+	- These were known as PCs (personal computer)
+## Components of a computer
+- Input/output devices
+	- screen
+	- keyboard
+	- mice
+	- touchscreens
+	- microphones
+	- speakers
+	- printers
+	- USB interfaces
+	- I/O devices are commonly called peripherals
+- Storage
+	- SSD uses flash memory to store files and other data, such as program files, song/movie files or office documents.
+		- SSDs are non-volatile meaning that they maintain their contents even when turned off
+- Memory:
+	- #RAM (random-access-memory) temporarily holds data read from storage and is designed such that any address can be accessed faster than an SSD and disk
+	- random-access comes from the ability to access any memory location quickly and in arbitrary order without having to spin a disk to get to the right position
+	- Ram is more expensive per bit due to RAM's speed
+	- Ram loses its contents when powered off
+- Processor
+	- #processor runs the comps programs, reading and executing instructions from memory, performing operations and reading/writing data to and from mem
+	- When powered on the processor starts executing the program whose first instructions is at mem location 0
+		- This program is generally BIOS (basic input output system)
+			- This sets up basic peripherals
+	- After starting BIOS the processor starts OS
+	- #operatingSystem allows a user to run other programs and interfaces with many other peripherals
+	- Processors are also called CPUs (central-processing-unit)
+	- Because speed is important a processor may contain a small amount of RAM on its own chip this is called #cache 
+- Clock
+	- A processor's instruction execute at a rate governed by the processor's #clock 
+	- This ticks at a specific speed such as 1GHz (1 billion ticks per second)
+- Computers typically run multiple programs simultaneously such as a web browser, an office app, etc.
+- After computers invented and occupied rooms engineers created smaller switches called #transistors these were later integrated onto a single chip called #integratedCircut
+- Engineers continued to make transistors smaller leading to #MoorsLaw The doubling of IC capacity roughly every 18 months, which continued for several decades
+- 1971 Intel produced the first single-IC processor named the 4004 
+# Language history
+- 1978 Brian Kernighan and Dennis Ritchie at ATT Bell Labs published a book describing a new high-level language with the simple name C being named after another language called B
+- C was dominant during the 80s & 90s
+- 1985 Bjarne Stroustrup published a book describing C-based lang called C++
+	- Added constructs to support the style of programming known as OOP
+	- ++ comes from the operator in c that increases number
+	- C/++ are both popular first langs for programming comps, 
+		- They are used for a variety of desktop and embedded sys
+# Problem solving
+## Programming langs vs problem solving
+- creating a program involves more than just knowing a programming lang
+- Programming is largely about #problemSolving
 - 
