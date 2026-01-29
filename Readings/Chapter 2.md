@@ -155,5 +155,24 @@ cout << fixed << setprecision(x) << 3.1244 << endl;
 - An initialized variable whose value cannot change is called a #constantVariable
 	- *Good practice is to name constant variables using uppercase letters with words separated by underscores*
 - `const` keyword is use to declare the variable as a constant then what type of number it is `float` or `double`
+# Using math functions
+## Basics
+- Standard #mathLibrary has about 20 math operations, known as functions
+-  You can include the lib and use those math functions
+- #functon is a list of statements that is executed by invoking the function's name
+	- This is a #functionCall
+- Any function input values or #arguments appear within (), separated by commas if more than one
 
-**Resume Notes at 2.10**
+## 
+
+Table 2.10.1: A few common math functions from the math library.
+
+| Function  | Behavior            | Example                         |
+| --------- | ------------------- | ------------------------------- |
+| sqrt(x)   | Square root of x    | sqrt(9.0) evaluates to 3.0.     |
+| pow(x, y) | Power: x^y          | pow(6.0, 2.0) evaluates to 36.0 |
+| fabs(x)   | Absolute value of x | fabs(-99.5) evaluates to 99.5   |
+Other functions are log (natural log) log2 (log base 2) log10 (log base 10) exp (raising e to a a power) ceil(rounding up) floor (rounding down) various trig functions like sin, cos, tan and more
+
+
+
