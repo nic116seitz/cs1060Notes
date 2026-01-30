@@ -163,8 +163,6 @@ cout << fixed << setprecision(x) << 3.1244 << endl;
 	- This is a #functionCall
 - Any function input values or #arguments appear within (), separated by commas if more than one
 
-## 
-
 Table 2.10.1: A few common math functions from the math library.
 
 | Function  | Behavior            | Example                         |
@@ -174,5 +172,148 @@ Table 2.10.1: A few common math functions from the math library.
 | fabs(x)   | Absolute value of x | fabs(-99.5) evaluates to 99.5   |
 Other functions are log (natural log) log2 (log base 2) log10 (log base 10) exp (raising e to a a power) ceil(rounding up) floor (rounding down) various trig functions like sin, cos, tan and more
 
+# Integer division and Modulo
+## Division: Integer rounding
+- when the operands of the / are ints, the operator performs integer division which doesn't generate any fraction
+## Divide by 0
+- #divide-by-zeroError occurs at runtime if a divisor is 0
+	- this is an example of a #runtimeError 
+
+## Modulo
+- This is the remainder of division between two ints
+- Both of the numbers in a Modulo must be ints for it to work otherwise it will cause errors
+
+## Type conversions
+- #typeConversion is a conversion of one data type to another such as an int or a double
+- Automatic conversions are known as #implicitConversion
+- in the case of + or \* if one operand is a double then the other is automatically converted to a double
+- For assignments the right side type is converted to the left side type
+- double to int conversion drops anything past the floating point
+
+## Type casting
+- sometimes the type must be explicitly converted
+- #typeCast is what does this
+- #static_cast operator is the operator that does this in the case of C++
+
+## Common errors
+- accidentally perform integer division when floating-point division was intended
+- Cast the entire result of int division rather than the operands thus not obtaining the desired floating-point division
+# Binary
+- Normally a programmer can think in terms of base ten numbers
+- However, a compiler must allocate some finite quantity of bits for a variable
+- Quantity of bits limits the range of numbers that the var can represent
+- Processor stores a number using base 2 #binaryNumber
+- #decimalNumber each digit must be 0-9 and each digit's place is weighed by increasing powers of 10
+- in #base2 each digit must be 0-1
+- Each digit's place is weighed by increasing powers of 2
+# Characters
+## Basics
+- a var of #char type can store a single character like the letter m
+- #characterLiteral is surrounded with single quotes
+	- Ex:
+		- `mychar = 'm'`
+## Getting a character from input
+- cin can be used to get one character from input
+- Character is internally stored as number
+- Think ASCII
+- Literal numbers are stored in memory as their value as opposed to ASCII
+## Escape sequences
+- These are non visible characters that have encoding in ASCII
+
+Table 2.14.2: Common escape sequences.
+
+| Escape sequence | Char         |
+| --------------- | ------------ |
+| \n              | newline      |
+| \t              | tab          |
+| \\'             | single quote |
+| \\"             | double quote |
+| \\\             | backslash    |
+## Common errors
+- Using double quotes instead of single quotes around a single character
+	- This causes compiler error
+# Strings
+## Strings and string literals
+- #string is a sequence of characters
+- #stringLiteral surrounds a characters sequence with double quotes
+## String variables and assignment
+- some var should hold a string
+- String datatype is not builtin to C++
+- Can be used after adding `#include <string>`
+- You can also initialize a string variable during declaration
+## Getting a string without whitespace from input
+- #whitespaceCharacter is a character used to represent horizontal and vertical spaces in text
+	- Includes:
+		- Space
+		- Tab
+		- newline char
+- In order to remove spaces from a input breakup the input of the user using multiple `cin`
+## Getting a string with whitespace from input
+- #getline the getline function allows you to get the the entire line of input
+# Integer overflow
+- Int var cannot store a number larger than the maximum supported by the var's datatype
+- *common error is to try to store a value greater than about 2 billion into an int variable
+	- This results in overflow
+- Declaring a variable of type `long long`
+- Most compilers detect when a statement assigns to a var that a literal constant so large as to cause overflow
+- The compiler may not report a syntax error but may output a #compilerWarning
+	- This is a message that indicates that there may be a potential problem
+	- GNU compiler outputs the message:
+		- "warning: implicit constant conversion"
+		- *Good practice is to not ignore compiler warnings*
+
+# Numeric data types
+- int and double are the most common numeric data types
+- There are others as well
+
+Table 2.17.1: Integer numeric data types.
+
+| Declaration      | Size (bits) | Number range                                            |
+| ---------------- | ----------- | ------------------------------------------------------- |
+| char myVar;      | 8           | -128 to 127                                             |
+| short myVar;     | 16          | -32,768 to 32,767                                       |
+| int myVar;       | 16/32       | (32-bit) -2,147,483,648 to 2,147,483,647                |
+| long myVar;      | 32/64       | (32-bit) -2,147,483,648 to 2,147,483,647                |
+| long long myVar; | 64          | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+- int is the most commonly used integer type
+- #long_long is used for integers expected to exceed 2 billion
+- short is rarely used
+	- Mainly used when you want to save memory when storing many smaller numbers
+
+Table 2.17.2: Floating-point numeric data types.
+
+| Declaration | Size    | Supported number range  |
+| ----------- | ------- | ----------------------- |
+| float x;    | 32 bits | -3.4x1038 to 3.4x1038   |
+| double x;   | 64 bits | -1.7x10308 to 1.7x10308 |
+- Float data-type is used to save memory similar to how short does the same with ints
+- If a variable is assigned with a value larger than its maximum supported value an #overflow occurs
+- On some processors (especially low cost used for "embedded" computing like in a care or medical device) floating point calculations run slower than int calculations
+- Floating-point types are typically only used when really necessary
+# Unsigned
+- When you know the outcome of an operation will be positive than you can use the word unsigned
 
 
+Table 2.18.1: Unsigned integer data types.
+
+| Declaration               | Size    | Supported number range          | Standard-defined minimum size |
+| ------------------------- | ------- | ------------------------------- | ----------------------------- |
+| unsigned char myVar;      | 8 bits  | 0 to 255                        | 8 bits                        |
+| unsigned short myVar;     | 16 bits | 0 to 65,535                     | 16 bits                       |
+| unsigned long myVar;      | 32 bits | 0 to 4,294,967,295              | 32 bits                       |
+| unsigned long long myVar; | 64 bits | 0 to 18,446,744,073,709,551,615 | 64 bits                       |
+| unsigned int myVar;       | 32 bits | 0 to 4,294,967,295              | _16 bits_                     |
+- signed numbers use the leftmost bit to store a number's sign
+- Signed number have a more complicated representation called two's complement
+- The smallest a unsigned short can take is 0
+# Random numbers
+## Generating a random number
+#random
+- The `rand()` function in C standard library calls a random int every time the function is called
+	- This is done in the rang 0 to RAND_MAX
+- Modulo is used to limit the range of random numbers used
+- `rand() % 3` can generate the numbers 0 1 2
+## Specific rnages
+- First you want to determine the number of possible values you want to include in random
+- Then you ad x to those numbers to determine your range
+	- So if you want to capture 10 - 30 you would do rand `(rand() % 10) + 10`
