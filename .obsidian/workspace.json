@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1f816563d4307065",
+        "id": "816d5df90f269fa8",
         "type": "tabs",
         "children": [
           {
-            "id": "f6ba7fdb535854d7",
+            "id": "7dd24b4e59b27ed8",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -182,10 +182,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f6ba7fdb535854d7",
+  "active": "7dd24b4e59b27ed8",
   "lastOpenFiles": [
-    "Readings/Chapter 1.md",
     "Readings/Chapter 2.md",
+    "Readings/Chapter 1.md",
     "Readings",
     "CSC1019/Chapter_9_Strings.md",
     "Final Project - Campus Event Planner.md",

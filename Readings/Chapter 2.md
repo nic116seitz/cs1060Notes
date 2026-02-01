@@ -1,4 +1,4 @@
-# Variables and assignments (general)
+%%  %%# Variables and assignments (general)
 
 ## Variables and assignments
 - #variable is an named item
@@ -292,6 +292,7 @@ Table 2.17.2: Floating-point numeric data types.
 - Floating-point types are typically only used when really necessary
 # Unsigned
 - When you know the outcome of an operation will be positive than you can use the word unsigned
+- Allows an integer to reach higher ranges than allowed with the signed type of int
 
 
 Table 2.18.1: Unsigned integer data types.
@@ -392,3 +393,5 @@ Table 2.22.1: Sample style guide.
 | Function names are CamelCase with uppercase first.                                                                                                                                                                                                                              | PrintHello()                                                                                                              | printHello()   // No<br>print_hello()  // No                                                                               |
 | Miscellaneous                                                                                                                                                                                                                                                                   |                                                                                                                           |                                                                                                                            |
 | Lines of code are typically less than 100 characters wide.                                                                                                                                                                                                                      | Code is more easily readable when lines are kept short. One long line can usually be broken up into several smaller ones. |                                                                                                                            |
+Chapter 2 questions: 
+For lab 2.28 I was unable to get the result expected by the lab what was I missing to understand this part. 
