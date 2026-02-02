@@ -1,4 +1,4 @@
-%%  %%# Variables and assignments (general)
+# Variables and assignments (general)
 
 ## Variables and assignments
 - #variable is an named item
