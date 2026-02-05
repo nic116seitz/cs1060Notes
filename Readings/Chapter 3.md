@@ -46,3 +46,37 @@
 # Detecting ranges with branches
 ## Relational operators
 - #relationOperator checks how one operand's value relates to another like being greater than
+## Detecting ranges with if-else statements
+- Programmers use sequential nature of multi-branch if-else arrangement to detect ranges of numbers
+# Detecting ranges using logical operators
+## Logical and or and not
+- A #logicalOperator treats operands as being true or false and evaluates to true or false
+	- they include #and, #or, and #not 
+	- languages typically use various symbols for those operators
+
+| Logical operator | Description                                                      |
+| ---------------- | ---------------------------------------------------------------- |
+| a AND b          | Logical AND: true when both of its operands are true.            |
+| a OR b           | Logical OR: true when at least one of its two operands are true. |
+| NOT a            | Logical NOT: true when its one operand is false, and vice-versa. |
+The table below has the symbols use to represent logical operators in C++
+## Detecting ranges implicitly vs. explicitly
+- Logical operators are used to detect a range by explicitly specifying the high-end and low-end of the range
+- If a program should detect increasing ranges without gaps a multi-branch if-else statement can be used without logical oeperators
+- the low end of the range is implicitly known upon reaching an expression
+- Decreasing range without gaps has implicitly known high-ends
+# Detecting ranges with gaps
+## Basic ranges with gaps
+- Often ranges contain gaps
+## Ranges with gaps using logical operators
+- Programmers often use logical operators to explicitly detect ranges with an upper and lower bound including rnages with gaps that may have intermediate bounds
+# Detecting multiple features with branches
+## Multiple distinct if statements
+- You can use multiple if statements in sequence to detect multiple features with independent actions
+	- They look similar to a multi-branch if-else statement
+	- Each if-statement is independent and thus more than one branch can execute
+## Nested if-else statements
+- A branch's statements can include any valid statements, including another if-else statement
+- these are known as #nestedIf-else statements
+	- Commonly used to make decisions that are based on multiple features
+- 
