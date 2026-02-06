@@ -79,4 +79,134 @@ The table below has the symbols use to represent logical operators in C++
 - A branch's statements can include any valid statements, including another if-else statement
 - these are known as #nestedIf-else statements
 	- Commonly used to make decisions that are based on multiple features
-- 
+# Common branching errors
+## Common error: Missing branches
+- When a branch has a single statement the braces are optional
+- *Good practice always uses the braces. Always using braces even when a branch only has one statement prevents the common error of mistakenly thinking a statement is part of a branch*
+## Common error: Using the incorrect operators
+- Most common error in C and C++ is to use = rather than == in an if-else expression
+- `=` is assignment and `==` is equality operator
+- If you use `=` mistakenly in a if statement it will reassign the variable it is evaluating to the value that you set in the if statement
+# Order of evaluation
+## Precedence rules
+- The order in which operators are evaluated in an expression are known as #prescedenceRules 
+
+| Operator/Convention | Description                                                              | Explanation                                                                                                                                                                     |
+| ------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ( )                 | Items within parentheses are evaluated first                             | In `(a * (b + c)) - d`, the + is evaluated first, then *, then -.                                                                                                               |
+| !                   | ! (logical NOT) is next                                                  | `! x \| y` is evaluated as `(!x) \| y`                                                                                                                                          |
+| * / % + -           | Arithmetic operators (using their precedence rules; see earlier section) | `z - 45 * y < 53` evaluates * first, then -, then <.                                                                                                                            |
+| <   <=   >   >=     | Relational operators                                                     | `x < 2 \| x >= 10` is evaluated as `(x < 2) \| (x >= 10)` because < and >= have precedence over \|.                                                                             |
+| ==   !=             | Equality and inequality operators                                        | `x == 0 && x != 10` is evaluated as `(x == 0) && (x != 10)` because == and != have precedence over &&.  <br>== and != have the same precedence and are evaluated left to right. |
+| &&                  | Logical AND                                                              | `x == 5 \| y == 10 && z != 10` is evaluated as `(x == 5) \| ((y == 10) && (z != 10))` because && has precedence over \|.                                                        |
+| \|\|                | Logical OR                                                               | \| has the lowest precedence of the listed arithmetic, logical, and relational operators.                                                                                       |
+## Common Error: Missing parentheses
+- Common error is to write expression that is evaluated in a  different order than expected
+- *Good practice is to use parentheses in expressions to make the intended order of evaluation explicit*
+## Common Error: Math expression of range
+- writing expressions like `(16 < age < 25)` as one might see in mathematics 
+- The meaning, however, almost certainly is not what the programmer intended. 
+	- Suppose age is presently 28
+	- Expression is evaluated left to right so evaluation of `16 < age` yields true
+	- Next the expression `true < 25` and in this context `true = 1` so the next statement will be considered true
+## Common error: Bitwise rather than logical operators
+- Logical AND is && and not just `&` and logical OR is `||` not just `|` .`&` and `|` represent #bitwiseOperators which perform AND or OR on corresponding individual bits of the operands
+- Common error is to use a bitwise operator instead of a logical operator 
+# Switch statements
+## Switch Statements
+- A #switch statement can more clearly represent multi-branch behavior involving a variable being compared to constant values
+- The program executes the first #case whose constant expression matches the value of the switch expression, executes that case's statements and then jumps to the end
+- If no case matches then the #defualtCase statements are executed
+- Syntax for switch statement is bellow
+```
+switch (a) {
+	case 0:
+		// Print "zero"
+		break;
+		
+	case 1:
+		// Print "one"
+		break;
+	
+	case 2:
+		// Print "two"
+		break;
+		
+	default:
+		// print "unknown"
+		break;
+	}
+```
+- Multi branch if statement can also be used, but switch statements make the programmers intent clear to those reading the code
+## Switch statement general form
+- The switch statement's expression should be an integer or char
+- The expression should not be a string or a floating-point type
+- Each case must have a constant expression like 2 or 'q'
+- A case expression cannot be a variable
+- The order of cases doesn't matter assuming break statements exist at the end of each case
+- *Good practice is to always have a default case for a switch statement. A programmer may be sure all cases are covered only to be surprised that some case was missing*
+## Omitting the break statement
+- Omitting the #break statement for a case will cause the statements within the next case to be executed
+- such "Falling through" to the next case can be useful when multiple cases such as cases 0,1, and 2 should execute the same statements
+# Boolean data type
+## Boolean data type
+- #Boolean refers to a quantity that only has two possible values, true or false
+- A Boolean variable may be set using true or false keywords
+## Uses of bool type
+- Used to simplify a complex expression
+- An expression that combines logical and relational operators can be simplified by assigning bool variables with the result of the of the expression using relational operators
+- The if-else expression can then consist of only logical operations using those variables
+# String comparisons
+## String comparison: Equality
+- Two strings are commonly compared for equality
+- Equal strings have the same number of chars
+- Each corresponding char is identical
+## String comparison: Relational
+- Strings are sometimes compared relationally (less than, greater than)
+- A comparison begins at index 0 and compares each character until the evaluation results in false or the end of the string is reached
+- If the length of one string is longer than the next the char numbers are not compared and the longer string is greater than the shorter string
+# String access operations
+## String character indices
+- A string is a sequence of characters in memeory
+- Each string character has a position number called an #index starting with 0
+- `stringVariableName.at(x)` is slicing in C++ x represents the index being sliced
+	- If you index past the length of the string it will return an error
+## Changing a character in a string
+- A char in a string can be assigned
+ ```
+ userString = "abcde";
+ userString.at(3) = 'x';
+ // after the above statements userString will equal "abcxe"
+ ```
+ - This doesn't work with strings being used where x is in the above example
+ 
+ ## Working with the end of a string
+ - Determining the last character in a string is often useful
+ - if the string's length is known the last index is length -1
+ - `.size()` determines the length of a string
+ - push_back() adds a character to the end of a string. Ex: If s1 is "Why", `s1.push_back('?');` changes s1 to "Why?".
+- append() adds one string to the end of another. Ex: If s1 is "Hey", `s1.append("!!!");` changes s1 to "Hey!!!".
+- The + operator can return a new string with one string appended to another string. Ex: If s1 is "Hey", then `s2 = s1 + "!!!";` assigns s2 with "Hey!!!".
+- length() is also interchangeable with size()
+- When you append even if only appending you must wrap it in a string `""`
+## Common errors
+- common error is to access an invalid string index especially exactly one larger than the largest index
+- The .at(index) function generates an exception if the index is out of range for the string's size
+- #exception is detected runtime error that commonly prints an error message and terminates the program
+- C++ also supports C-style access of a string using \[] rather than .at
+	- This access does not provide error checking
+	- *Good practice is to use .at() rather than brackets due to the error checking in .at()* 
+ # Character operations
+ - Including the #cctypeLibrary via `#include <cctype>` provides several functions for working with chars 
+ - ctype stands for character type
+ - The first c in cctype indicates the library is originally from the C language
+ ## 
+
+Table 3.15.1: Character functions return values.
+
+|            |                                     |                                                                          |     |            |                   |                                                                                           |
+| ---------- | ----------------------------------- | ------------------------------------------------------------------------ | --- | ---------- | ----------------- | ----------------------------------------------------------------------------------------- |
+| isalpha(c) | true if alphabetic:  <br>a-z or A-Z | isalpha('x') // true<br>isalpha('6') // false<br>isalpha('!') // false   |     | toupper(c) | Uppercase version | letter = toupper('a')  // A<br>letter = toupper('A')  // A<br>letter = toupper('3')  // 3 |
+| isdigit(c) | true if digit: 0-9.                 | isdigit('x') // false<br>isdigit('6') // true                            |     | tolower(c) | Lowercase version | letter = tolower('A')  // a<br>letter = tolower('a')  // a<br>letter = tolower('3')  // 3 |
+| isspace(c) | true if whitespace.                 | isspace(' ')  // true<br>isspace('\n') // true<br>isspace('x')  // false |     |            |                   |                                                                                           |
+- Spaces count as alphas for the sake of checking `isalpha`
