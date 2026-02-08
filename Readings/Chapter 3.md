@@ -210,3 +210,67 @@ Table 3.15.1: Character functions return values.
 | isdigit(c) | true if digit: 0-9.                 | isdigit('x') // false<br>isdigit('6') // true                            |     | tolower(c) | Lowercase version | letter = tolower('A')  // a<br>letter = tolower('a')  // a<br>letter = tolower('3')  // 3 |
 | isspace(c) | true if whitespace.                 | isspace(' ')  // true<br>isspace('\n') // true<br>isspace('x')  // false |     |            |                   |                                                                                           |
 - Spaces count as alphas for the sake of checking `isalpha`
+
+# Finding, inserting, and replacing text in a string
+## Finding text in a string
+- often there is a need to find and work with text inside another string
+- #find `find()` function is used to find a string or char inside a string
+- if the string is not found then the output will be `string::npos` 
+## Finding text starting from the middle of a string
+- Sometimes there is a need to find text starting from a specific location inside a string instead of from the beginning of a string
+- `find(textToFind, startIndex)` returns the index of the first occurrence of textToFind starting at the index startIndex instead of index 0
+- The find function will find return the relative position to the start index specified
+## Getting a substring
+- #substring is a contiguous part of a string
+- `substr(startIndex, numCharacters)` function is used to get a substring of a string
+- When used without the length parameter it returns the substring from startIndex to the end of the string
+## Inserting and replacing text in a string
+- #insert `insert()` inserts text into a string `.insert(startIndex, newText)` this inserts text before the character at startIndex
+- #replace `replace(startIndex, numCharacters, newText)` replaces the substring starting at the index with a numCharacters spec
+- The num of characters refers to the number of characters being replaced not the length of the text replacing the original
+- *Be aware of spacing when using the insert function*
+# Conditional expressions
+- This is a way to write if statements that changes the syntax to provide shorthand for longer conditionals
+```
+// Long Form //
+if (condition) {
+	myVar = expr1;
+}
+else {
+	myVar = expr2;
+}
+
+// Short Form //
+myVar = (condition) ? expr1 : expr2;
+
+```
+- #conditionalExpression has the form `condtion ? exprWhenTrue: exprWhenFalse`
+- All three operands are expressions 
+- If the condition evaluates to true then `exprWhenTrue` is evaluated
+- If the condition is false then the `exprWhenFalse` is evaluated
+- A conditional expression has three operands and thus `?` and `:` are sometimes referred to as a #ternaryOperator
+- *Good practice is to restrict usage of conditional expression to an assignment statement*
+# Floating-point comparison
+- Floating-point numbers should not be compared using ==
+- Some floating point numbers cannot be exactly represented in the limited memory of 64 bits
+- Floating point numbers should be compared for "close enough rather than exact equality"
+- for this fabs is used
+- the difference indicating threshold that floating-point numbers are equal is often called the #epsilon 
+- This value depends on the program's expected values
+- In simple terms when comparing two floats you find the difference and then try test to see if the resulting number is less then 0.0001
+- Syntax:
+	- `fabs(double1 - double2) < 0.0001`
+- This is how you get close enough to check for equality among doubles or floats
+# Short circuit evaluation
+- logical operator evaluates operands from left to right
+- #ShortCircuitEvaluation skips evaluating later operands if the result of the logical operator can already be determined
+- logical AND operator short circuits to false if the first operand evaluates to false and skips evaluating the second operand
+- logical OR operator short circuits to true if the first operand is true and skips evaluating the second operand
+
+| Operator                  | Example                                                                                                                 | Short circuit evaluation                                                                                             |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `operand1 && operand2`    | **`true`** `&& operand2`                                                                                                | If the first operand evaluates to true, operand2 is evaluated.                                                       |
+| **`false`** `&& operand2` | If the first operand evaluates to false, the result of the AND operation is always false, so operand2 is not evaluated. |                                                                                                                      |
+| `operand1 \| operand2`    | **`true`** `\| operand2`                                                                                                | If the first operand evaluates to true, the result of the OR operation is always true, so operand2 is not evaluated. |
+| **`false`** `\| operand2` | If the first operand evaluates to false, operand2 is evaluated.                                                         |                                                                                                                      |
+**This table is broken try to fix when possible see 3.19.1
