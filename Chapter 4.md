@@ -17,7 +17,7 @@
 - Ex: 
 	- sometimes a loop is executed as long as a value is greater than another value or less than another value
 	- sometimes a loop is executed as long as a value is not equal to another value
-## common erorrs
+## common errors
 - A common error is to use the opposite loop expression than desired, like using `x == 0` rather than `x != 0`
 - One should remember that the expression describes when the loop should iterate not when the loop should terminate
 - An #infiniteLoop is a loop that never 
