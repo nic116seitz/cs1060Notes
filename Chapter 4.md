@@ -23,4 +23,30 @@
 - An #infiniteLoop is a loop that never 
 ## Getting input until a sentinel is seen
 - Loops are commonly used to process an input list of values. A #sentinelValue is a special value indicating the end of a list such as a list of positive integers ending with 0, 
+# For loops
+## Basics
+- A loop commonly must iterate a specific number of times such as 10 times
+- Though achievable with a while loop. the situation is so common that a special kind of loop exists
+- A #forLoop is a loop with three parts at the top loop variable initialization a loop expression and a loop variable update
+- A loop describes iterating a specific number of times more naturally than a while loop
+```
+for (intialExpression; conditionExpression; updateExpression) {
+// Loop Body
+}
+```
+- the language supports an #incrementOperator `++i` 
+- likewise there is also a #decrementOperator which is `--i`
+- There are two increment operators when the plus comes before that is a pre-increment and when the ++ comes after that is a post increment
+- `++i` increments before evaluating to a value
+- `i++` increments after
+- This means if i is 5 `++i` outputs 6 while `i++` outputs 5 (and then becomes 6). 
+- When using for loops you can set the first input to determine the amount of times the loop will execute
+## Choosing among for and while loops
+- Generally a programmer uses a for loop when the number of iterations is known
+# More examples
+- Analyzing data is a common programming task
+- A common data analysis task is to find the maximum value in a list of values
+- A loop can achieve that task by updating a max-seen-so-far variable on each iteration 
+## Beyond iterating N times
+- The three parts of a for loop may be adjusted to do more than just iterate N times. For example, a for loop can output various sequences
 - 
