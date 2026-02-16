@@ -49,4 +49,15 @@ for (intialExpression; conditionExpression; updateExpression) {
 - A loop can achieve that task by updating a max-seen-so-far variable on each iteration 
 ## Beyond iterating N times
 - The three parts of a for loop may be adjusted to do more than just iterate N times. For example, a for loop can output various sequences
-- 
+## Loop style issues
+#### Starting with 0
+- Programmers in C, C++, Java and other languages have generally standardized on looping N times by starting with `i = 0` and checking for `i < N`, rather than by using `i = 1` and `i <= N`
+- One reason is due to the other constructs (array/vectors), often used with loops, start with 0
+- Another is simply that a choice was made
+#### The ++ operators
+- The `++` operator can appear as `++i` #prefixForm or as `i++` #postfixForm `++i` increments i first and then evaluates the result, while `i++` evaluates the results first and then increments i. The distinction is relevant in a statement like `x = ++I` vs `x = i++` if i is 5 the first yields `x = 6` and the second `x = 5`
+- Some consider `++i` safer for beginners in case they type `i = ++i` which typically works as expected (whereas i = i++ does not),
+#### In-loop declaration of i
+- Variables can be declared throughout code, so many programmers use: `for (int i = 0; i < N; ++i)`. 
+## Common errors / good practice
+- *a common error is to have a ++i; statement in the loop body, causing the loop variable to be updated twice per iteration* 
