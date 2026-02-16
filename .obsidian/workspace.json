@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Chapter 4.md",
+                "file": "Readings/Chapter 4.md",
                 "mode": "source",
                 "source": false
               },
@@ -199,9 +199,9 @@
   },
   "active": "bd18a614c04c1ad4",
   "lastOpenFiles": [
-    "Chapter 4.md",
-    "Readings/Chapter 2.md",
     "Readings/Chapter 3.md",
+    "Readings/Chapter 4.md",
+    "Readings/Chapter 2.md",
     "Readings/Chapter 1.md",
     "Readings",
     "CSC1019/Chapter_9_Strings.md",

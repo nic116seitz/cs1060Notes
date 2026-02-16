@@ -61,3 +61,13 @@ for (intialExpression; conditionExpression; updateExpression) {
 - Variables can be declared throughout code, so many programmers use: `for (int i = 0; i < N; ++i)`. 
 ## Common errors / good practice
 - *a common error is to have a ++i; statement in the loop body, causing the loop variable to be updated twice per iteration* 
+# Loops and strings
+## Iterating through a string with a for loop
+- A programmer commonly iterates through a string, examining each character. The following example counts the number of letters in a string, not counting digits, symbols, etc.
+## Iterating until done with a while loop
+- A programmer commonly wishes to iterate through a string until something is done.
+- A #nestedLoop is a loop that appears in the body of another loop
+- The nested loops are commonly referred to as the #innerLoop and #outerLoop
+- Nested loops have various uses
+	- One it to generate all the combinations of some items
+	-
