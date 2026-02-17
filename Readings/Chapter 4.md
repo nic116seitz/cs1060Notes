@@ -70,4 +70,8 @@ for (intialExpression; conditionExpression; updateExpression) {
 - The nested loops are commonly referred to as the #innerLoop and #outerLoop
 - Nested loops have various uses
 	- One it to generate all the combinations of some items
-	-
+# Break and continue
+- a #breakStatement in a loop causes an immediate exit of the loop
+- a break statement can sometimes yield a loop that is easier to understand
+- A #continueStatement in a loop causes an immediate jump to the loop condition check
+- a continue statement can sometimes improve the readability of a loop. 
