@@ -75,3 +75,41 @@ for (intialExpression; conditionExpression; updateExpression) {
 - a break statement can sometimes yield a loop that is easier to understand
 - A #continueStatement in a loop causes an immediate jump to the loop condition check
 - a continue statement can sometimes improve the readability of a loop. 
+4.9.1 Though process notes
+- first loop: result = 3 | a = 3 
+- second loop: result = 8 | a = 4 | b 
+# Variable name scope 
+## Scope of names
+- A declared name is only valid within a region of code known as the name's #scope
+- A variable `userNUm` declared in `main()` is only valid within `main()`
+- A variable may be declared within other blocks
+- A #block is a brace enclosed sequence of statements such as found with an if-else, for loop, or while loop. A variable name'scope extends from the declaration to the closing brace
+## For loop index
+- Programmers commonly declare a for loop's index variable in the for loop's initialization statement
+- That index variable's scope covers the other parts of the for loop up to the for loop's closing brace
+- The reason is clear from the for loop's equivalent while loop code shown below, noting the braces around equivalent code
+
+## 
+
+able 4.10.1: Index variable declared in a for loop's initialization statement.
+
+| for loop                                                                        | Equivalent while loop                                                                                           |
+| ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| for (int i = 0; i < 5; ++i) {<br>   x = x + i;<br>}<br><br>x = x + i;  // ERROR | {<br>   int i = 0;<br>   while (i < 5) {<br>      x = x + i;<br>      ++i;<br>   }<br>}<br>x = x + i;  // ERROR |
+## Common error
+- *A common error is to declare a variable inside a loop whose value should persist across iterations* 
+## Enumerations
+- Some variables only need to store a small set of named values
+	- Ex: A variable representing a traffic light need only store values named GREEN, YELLOW, or RED. 
+- #enumerationType declares a name for a new type and possible values for that type
+
+Construct 4.11.1: Enumeration type.
+
+`enum identifier {enumerator1, enumerator2,  ...};`
+- The items within the braces ("enumerators") are integer constants automatically assigned an integer value, with the first item being 0, the second 1, and so on. An enumeration declares a new data type that can be used like the built-in types int, char, etc.
+- because different enumerated types might use some of the same names *good practice is to prepend the distinguishing prefix*
+- enumerations are used vs strings because enumerations are safer
+- If using a string you may not get an error if the string is not within the possible enumerations
+- Enumeration also allows for cleaner code as compared to the bool type
+- When declaring a second variable you can give it the same enumerations as another by declaring it after the initial variable declared with the enumeration type
+- The different enumerators correspond to a number signifying which enumerator is "active"
