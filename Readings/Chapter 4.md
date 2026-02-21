@@ -113,3 +113,5 @@ Construct 4.11.1: Enumeration type.
 - Enumeration also allows for cleaner code as compared to the bool type
 - When declaring a second variable you can give it the same enumerations as another by declaring it after the initial variable declared with the enumeration type
 - The different enumerators correspond to a number signifying which enumerator is "active"
+## 4.12 C++ example: Salary calculations with loops
+- A program may exec the same computations repeatedly
