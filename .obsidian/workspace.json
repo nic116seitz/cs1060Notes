@@ -4,39 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "816d5df90f269fa8",
+        "id": "04f6a3d3eac8449f",
         "type": "tabs",
         "children": [
           {
-            "id": "7dd24b4e59b27ed8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Readings/Chapter 2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 2"
-            }
-          },
-          {
-            "id": "ea230c6102d5e23b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Readings/Chapter 5 Array vector Concept (general).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Chapter 5 Array vector Concept (general)"
-            }
-          },
-          {
-            "id": "bd18a614c04c1ad4",
+            "id": "f48fe639b696c4b5",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -49,8 +21,7 @@
               "title": "Chapter 4"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,12 +182,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ea230c6102d5e23b",
+  "active": "f48fe639b696c4b5",
   "lastOpenFiles": [
-    "Readings/Chapter 2.md",
+    "Readings/Chapter 3.md",
+    "length.md",
     "Readings/Chapter 5 Array vector Concept (general).md",
     "Readings/Chapter 4.md",
-    "Readings/Chapter 3.md",
+    "Readings/Chapter 2.md",
     "Readings/Chapter 1.md",
     "Readings",
     "CSC1019/Chapter_9_Strings.md",
@@ -240,7 +212,6 @@
     "CSC1019/Chapter_6_part_1.md",
     "CSC1019/Class_5_Variables_and_Expressions.md",
     "CSC1019/Chapter 4.md",
-    "CSC1019/Class 3.md",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
     "Untitled 1.base",
