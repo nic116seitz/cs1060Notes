@@ -1,0 +1,1 @@
+In the chapter at 6.1.9 question 3 there was a question asking if the following was a valid function

@@ -4,24 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "04f6a3d3eac8449f",
+        "id": "fa1774c9f523f2f1",
         "type": "tabs",
         "children": [
           {
-            "id": "f48fe639b696c4b5",
+            "id": "664e7f835ec59905",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Readings/Chapter 4.md",
+                "file": "Readings/Chapter 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 4"
+              "title": "Chapter 3"
+            }
+          },
+          {
+            "id": "d0e7ec186f1b74db",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Chapter 6 (Functions).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chapter 6 (Functions)"
+            }
+          },
+          {
+            "id": "f841e6cf56be06bc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Readings/Chapter 5 Array vector Concept (general).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chapter 5 Array vector Concept (general)"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -182,12 +211,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f48fe639b696c4b5",
+  "active": "d0e7ec186f1b74db",
   "lastOpenFiles": [
-    "Readings/Chapter 3.md",
-    "length.md",
     "Readings/Chapter 5 Array vector Concept (general).md",
+    "Chapter 6 (Functions).md",
+    "Chapter 6 questions.md",
+    "Readings/Chapter 3.md",
     "Readings/Chapter 4.md",
+    "length.md",
     "Readings/Chapter 2.md",
     "Readings/Chapter 1.md",
     "Readings",
@@ -210,8 +241,6 @@
     "CSC1019/Chapter_7_Loops.md",
     "CSC1019/Chapter_6_Part_2.md",
     "CSC1019/Chapter_6_part_1.md",
-    "CSC1019/Class_5_Variables_and_Expressions.md",
-    "CSC1019/Chapter 4.md",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
     "Untitled 1.base",
