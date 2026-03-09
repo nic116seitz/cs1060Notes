@@ -222,13 +222,17 @@ Table 3.15.1: Character functions return values.
 - The find function will find return the relative position to the start index specified
 ## Getting a substring
 - #substring is a contiguous part of a string
-- `substr(startIndex, numCharacters)` function is used to get a substring of a string
+- `substr(string, startIndex, numCharacters)` function is used to get a substring of a string
 - When used without the length parameter it returns the substring from startIndex to the end of the string
 ## Inserting and replacing text in a string
 - #insert `insert()` inserts text into a string `.insert(startIndex, newText)` this inserts text before the character at startIndex
 - #replace `replace(startIndex, numCharacters, newText)` replaces the substring starting at the index with a numCharacters spec
 - The num of characters refers to the number of characters being replaced not the length of the text replacing the original
 - *Be aware of spacing when using the insert function*
+- When trying to replace singular characters, remember that replace doesn't take chars as arguments
+	- Ex:
+	- Incorrect: `string.replace(startIndex, numCharacters, '!');`
+	- Correct: `string.replace(startIndex, numCharacters, "!");`
 # Conditional expressions
 - This is a way to write if statements that changes the syntax to provide shorthand for longer conditionals
 ```
