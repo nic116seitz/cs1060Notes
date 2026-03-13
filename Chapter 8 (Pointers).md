@@ -138,4 +138,7 @@ sleepHrsSize += todaysHrsSize;
 - #dereferenceOperator `*` is prepended to a pointer variable's name to retrieve the data which the pointer variable points
 - The `*` operator and the `.` operator may be combined to access a dynamically allocated object's members a s in `(*a).b` instead of `a->b`
 - Ex: `sleepRecord->Print() == (*sleepRecord).Print()`
-- 
+# Arrays of dynamically allocated objects
+- Class methods can be accessed by calling using the array location and then the method being called
+	- Ex: `pressureReadings[0].Print();` this calls the print class  method on the first BloodPressure object in pressure readings 
+- #delete `delete[]` is used to deallocate an array allocated with the new operator

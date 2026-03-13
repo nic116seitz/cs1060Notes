@@ -34,6 +34,18 @@
               "icon": "lucide-file",
               "title": "Chapter 8 (Pointers)"
             }
+          },
+          {
+            "id": "37428babcfb51fe6",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.12.4"
+            }
           }
         ],
         "currentTab": 1
