@@ -142,3 +142,9 @@ sleepHrsSize += todaysHrsSize;
 - Class methods can be accessed by calling using the array location and then the method being called
 	- Ex: `pressureReadings[0].Print();` this calls the print class  method on the first BloodPressure object in pressure readings 
 - #delete `delete[]` is used to deallocate an array allocated with the new operator
+# Classes with dynamically allocated data
+- Three class members are needed to implement an array with extra capacity:
+	- Pointer to hold the dynamically allocated array's address
+	- A capacity to hold the total number of elements that the array can hold
+	- Size to hold the number of elements currently held in the array
+- 
