@@ -147,4 +147,357 @@ sleepHrsSize += todaysHrsSize;
 	- Pointer to hold the dynamically allocated array's address
 	- A capacity to hold the total number of elements that the array can hold
 	- Size to hold the number of elements currently held in the array
-- 
+##  Reference for generating linked list from loops
+```
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+class IntNode {
+public:
+   IntNode(int dataInit = 0, IntNode* nextLoc = nullptr);
+   void InsertAfter(IntNode* nodeLoc);
+   IntNode* GetNext();
+   void PrintNodeData();
+private:
+   int dataVal;
+   IntNode* nextNodePtr;
+};
+
+// Constructor
+IntNode::IntNode(int dataInit, IntNode* nextLoc) {
+   this->dataVal = dataInit;
+   this->nextNodePtr = nextLoc;
+}
+
+/* Insert node after this node.
+ * Before: this -- next
+ * After:  this -- node -- next
+ */
+void IntNode::InsertAfter(IntNode* nodeLoc) {
+   IntNode* tmpNext = nullptr;
+   
+   tmpNext = this->nextNodePtr;    // Remember next
+   this->nextNodePtr = nodeLoc;    // this -- node -- ?
+   nodeLoc->nextNodePtr = tmpNext; // this -- node -- next
+}
+
+// Print dataVal
+void IntNode::PrintNodeData() {
+   cout << this->dataVal << endl;
+}
+
+// Grab location pointed by nextNodePtr
+IntNode* IntNode::GetNext() {
+   return this->nextNodePtr;
+}
+
+int main() {
+   IntNode* headObj = nullptr; // Create IntNode pointers
+   IntNode* currObj = nullptr;
+   IntNode* lastObj = nullptr;
+   int i;                // Loop index
+   
+   headObj = new IntNode(-1);        // Front of nodes list
+   lastObj = headObj;
+   
+   for (i = 0; i < 20; ++i) {        // Append 20 rand nums
+      currObj = new IntNode(rand());
+      
+      lastObj->InsertAfter(currObj); // Append curr
+      lastObj = currObj;             // Curr is the new last item
+   }
+   
+   currObj = headObj;                // Print the list
+   
+   while (currObj != nullptr) {
+      currObj->PrintNodeData();
+      currObj = currObj->GetNext();
+   }
+   
+   return 0;
+}
+```
+
+# Memory Regions: Heap/Stack
+- #code - region where program instructions are stored
+- #StaticMemory - region where global variables as well as static local variables are allocated
+	- Static variables are allocated once and stay in the same memory location for the duration of a program's execution
+- #TheStack - region where a function's local variables are allocated during a function call
+	- function call allocates local variables to the stack 
+	- return removes
+- #TheHeap  - region where "new" operator allocates memory, and where the `delete` operator deallocates memory aka known as #freeStore
+# Additional material: Destructors (Simple linked lists)
+- #desturctor is a special class member function that is called automatically when a variable of that class type is destroyed
+- Within the public class definition the destructor syntax is a function prepended with `~` 
+	- Ex:
+	- `~LinkedList()`
+	- This can be expanded to also create an output or do something else with the value like below
+```
+class ClassName {
+	public:
+		IntNode(int value) { //class constructor
+			numVal = vlaue;
+		}
+		~IntNode() { //class destructor
+			cout << numVal << endl; //prints the numVal property then deletes
+		}		
+}
+...
+```
+Example of a ClassList and Class nodes being deleted:
+```
+#include <iostream> 
+using namespace std; 
+class IntNode { 
+	public: IntNode(int value) {
+		numVal = value; 
+	} 
+	~IntNode() {
+		 cout << numVal << endl; 
+	} 
+	 int numVal;
+	 IntNode* next;
+}; 
+class IntLinkedList {
+	 public: IntLinkedList(); 
+	 ~IntLinkedList();
+	  void Prepend(int);
+	  
+	  IntNode* head; 
+};
+IntLinkedList::IntLinkedList() {
+	head = nullptr; 
+} 
+IntLinkedList::~IntLinkedList() {
+	while (head) {
+		IntNode* next = head->next;
+		delete head;
+		head = next; 
+	}
+	cout << "end of list" << endl;
+} 
+void IntLinkedList::Prepend(int dataValue) {
+	IntNode* newNode = new IntNode(dataValue);
+	newNode->next = head;
+	head = newNode; 
+} 
+int main() { 
+	IntLinkedList* list = new IntLinkedList(); 
+	
+	list->Prepend(2); 
+	list->Prepend(4); 
+	list->Prepend(6); 
+	list->Prepend(8); 
+	
+	delete list; 
+	
+	return 0; 
+}
+```
+# Destructors
+- #desturctor is a special class member function that is called automatically when a variable of that class type is destroyed
+- think of this as the ability to delete the contents of an array using `delete[]` declared the same way as above followed by the parameter you want to delete
+# Memory leaks
+- #MemoryLeak occurs when a program that allocates memory loses the ability to access the allocated memory, typically due to a failure to properly destroy/free dynamically allocated memory
+- *common error is failing to free allocated memory that is no longer used resulting in a memory leak*
+
+# Copy constructor
+```
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+   MyClass();
+   MyClass(const MyClass& origObject); // Copy constructor
+   ~MyClass();
+   
+   // Set member value dataObject
+   void SetDataObject(const int setVal) {
+      *dataObject = setVal;
+   }
+   
+   // Return member value dataObject
+   int GetDataObject() const {
+      return *dataObject;
+   }
+private:
+   int* dataObject;// Data member
+};
+
+// Default constructor
+MyClass::MyClass() {
+   cout << "Constructor called." << endl;
+   dataObject = new int; // Allocate mem for data
+   *dataObject = 0;
+}
+
+// Copy constructor
+MyClass::MyClass(const MyClass& origObject) {
+   cout << "Copy constructor called." << endl;
+   dataObject = new int; // Allocate sub-object
+   *dataObject = *(origObject.dataObject);
+}
+
+// Destructor
+MyClass::~MyClass() {
+   cout << "Destructor called." << endl;
+   delete dataObject;
+}
+
+void SomeFunction(MyClass localObj) {
+   // Do something with localObj
+}
+
+int main() {
+   MyClass tempClassObject; // Create object of type MyClass
+   
+   // Set and print data member value
+   tempClassObject.SetDataObject(9);
+   cout << "Before: " << tempClassObject.GetDataObject() << endl;
+   
+   // Calls SomeFunction(), tempClassObject is passed by value
+   SomeFunction(tempClassObject);
+   
+   // Print data member value
+   cout << "After: " << tempClassObject.GetDataObject() << endl;
+   
+   return 0;
+}
+```
+# Copy assignment operator
+## Default assignment operator behavior
+- Given two MyClass objects
+- Copy would be `classObj2 = classObj1;` to copy classObj1 to classObj2
+- not good for use with pointer members as 
+ 
+
+## Figure 8.15.1: Assignment operator performs a deep copy.
+```
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+   MyClass();
+   ~MyClass();
+   MyClass& operator=(const MyClass& objToCopy);   
+   // Set member value dataObject
+   void SetDataObject(const int setVal) {
+      *dataObject = setVal;
+   }
+   
+   // Return member value dataObject
+   int GetDataObject() const {
+      return *dataObject;
+   }
+private:
+   int* dataObject;// Data member
+};
+
+// Default constructor
+MyClass::MyClass() {
+   cout << "Constructor called." << endl;
+   dataObject = new int; // Allocate mem for data
+   *dataObject = 0;
+}
+
+// Destructor
+MyClass::~MyClass() {
+   cout << "Destructor called." << endl;
+   delete dataObject;
+}
+
+MyClass& MyClass::operator=(const MyClass& objToCopy) {
+   cout << "Assignment op called." << endl;
+   
+   if (this != &objToCopy) {           // 1. Don't self-assign
+      delete dataObject;                  // 2. Delete old dataObject
+      dataObject = new int;               // 3. Allocate new dataObject
+      *dataObject = *(objToCopy.dataObject); // 4. Copy dataObject
+   }
+   
+   return *this;
+}
+
+int main() {
+   MyClass classObj1; // Create object of type MyClass
+   MyClass classObj2; // Create object of type MyClass
+   
+   // Set and print object 1 data member value
+   classObj1.SetDataObject(9);
+   
+   // Copy class object using copy assignment operator
+   classObj2 = classObj1;
+   
+   // Set object 1 data member value
+   classObj1.SetDataObject(1);
+   
+   // Print data values for each object
+   cout << "classObj1:" << classObj1.GetDataObject() << endl;
+   cout << "classObj2:" << classObj2.GetDataObject() << endl;
+   
+   return 0;
+}
+```
+# Rule of three
+#ruleOfThree
+- if a programmer explicitly defines any one of three special member functions then the programmer should explicitly define all three
+	- Namely destructor copy constructor or copy assignment operator
+- these three are also called #theBigThree
+- *good practice is to always follow the rule of three and define the big three if any one of these functions is defined *
+
+## Default destructor, copy constructor and copy assignment operator
+- IF a programmer doesn't define a special member function then the compiler defines default implementation
+	- #defaultDestructor does nothing
+	- #defaultCopyConstructor initializes an object's data members with a copy, by value of another object's corresponding members
+		- this is called a shallow copy
+	- #defaultCopyAssignmentOperator assigns an object's data members with a copy, by value of another object's corresponding members
+# Smart pointers
+## unique_ptr for single objects
+- #smartpointer is a class that wraps around a pointer to an object to simplify the memory management of the object
+- to distinguish from pointer the latter is reffered to as raw pointer
+- #unique_ptr is a smart pointer that only permits one owner over an object
+	- when it goes out of scope the object owned by it is auto deleted
+	- to use must include `#include <memory>`
+## 
+
+able 8.17.1: Types of smart pointers.
+
+| Type       | Features                                                                                                                                                                                                                                  | When to use                                                                       |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| unique_ptr | A unique_ptr only allows an exclusive ownership of the object. The object's ownership can be transferred to a different unique_ptr, but not shared. When a unique_ptr goes out of scope, the object owned by the unique_ptr is deleted.   | As an efficient replacement of raw pointer                                        |
+| shared_ptr | A shared_ptr permits shared ownership of an object. When the last owner of the object goes out of scope, the object is deleted. Internally, a counter, called the reference count, keeps track of the number of owners sharing an object. | When a dynamically allocated object is shared by multiple pointers                |
+| weak_ptr   | A weak_ptr allows access to, but not ownership of, an object that is owned by a shared_ptr.                                                                                                                                               | To interact with a dynamically allocated object whose memory is managed elsewhere |
+|            |                                                                                                                                                                                                                                           |                                                                                   |
+Example of uniue_ptr:
+```
+class Sleep{
+	public:
+		Sleep();
+		~Sleep();
+		void Set(int hoursVal, int minutesVal);
+		void Print();
+		
+		private:
+			int hours;
+			int minutes;
+};
+...
+
+void RunSleep(int hoursVal, int minutesVal) {
+	unique_ptr<Sleep> sleepRecord(new Sleep());
+	
+	sleepRecord->Print();
+}
+```
+## 
+
+able 8.17.1: Types of smart pointers.
+
+| Type       | Features                                                                                                                                                                                                                                  | When to use                                                                       |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| unique_ptr | A unique_ptr only allows an exclusive ownership of the object. The object's ownership can be transferred to a different unique_ptr, but not shared. When a unique_ptr goes out of scope, the object owned by the unique_ptr is deleted.   | As an efficient replacement of raw pointer                                        |
+| shared_ptr | A shared_ptr permits shared ownership of an object. When the last owner of the object goes out of scope, the object is deleted. Internally, a counter, called the reference count, keeps track of the number of owners sharing an object. | When a dynamically allocated object is shared by multiple pointers                |
+| weak_ptr   | A weak_ptr allows access to, but not ownership of, an object that is owned by a shared_ptr.                                                                                                                                               | To interact with a dynamically allocated object whose memory is managed elsewhere |
