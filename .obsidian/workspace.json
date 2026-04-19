@@ -27,12 +27,52 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Readings/Chapter 9.md",
+                "file": "Readings/Chapter 7  (Objects).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chapter 9"
+              "title": "Chapter 7  (Objects)"
+            }
+          },
+          {
+            "id": "824e3cac964e96d0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Final Project.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Final Project"
+            }
+          },
+          {
+            "id": "73f167f6c32d2e94",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Readings/Chapter 12 (Exception Handling).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Chapter 12 (Exception Handling)"
+            }
+          },
+          {
+            "id": "491dcaf0018aa9d1",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.12.7"
             }
           },
           {
@@ -48,7 +88,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -209,18 +249,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bd18a614c04c1ad4",
+  "active": "824e3cac964e96d0",
   "lastOpenFiles": [
-    "Chapter 8 (Pointers).md",
-    "Readings/Chapter 9.md",
-    "Readings/Chapter 4.md",
+    "Readings/Chapter 12 (Exception Handling).md",
+    "Readings/Chapter 8 (Pointers).md",
+    "Final Project.md",
+    "Readings/Chapter 11 (Recursion).md",
     "Readings/Chapter 7  (Objects).md",
-    "Readings/Chapter 6 (Functions).md",
-    "Readings/Chapter 5 Array vector Concept (general).md",
-    "Chapter 6 questions.md",
-    "Readings/Chapter 3.md",
+    "Readings/Chapter 10 (Derived classes).md",
+    "Readings/Chapter 9.md",
     "Readings/Chapter 2.md",
     "Readings/Chapter 1.md",
+    "Readings/Chapter 3 (branching).md",
+    "Readings/Chapter 4 (Loops).md",
+    "Readings/Chapter 5 Array vector Concept (general).md",
+    "Readings/Chapter 6 (Functions).md",
+    "Readings/Chapter 6 questions.md",
     "Readings",
     "CSC1019/Chapter_9_Strings.md",
     "Final Project - Campus Event Planner.md",
@@ -234,11 +278,7 @@
     "Pseudo_Code/Grocery List.md",
     "CSC1019/Chapter_10_Lists.md",
     "Pseudo_Code/ATM.md",
-    "CSC1019/Class 9 Functions.md",
-    "CSC1019/Chapter 6 Feed Back Karina.md",
-    "CSC1019/Chapter_8_Modules.md",
     "Pseudo_Code",
-    "CSC1019/Chapter_7_Loops.md",
     "Untitled 2.canvas",
     "Untitled 1.canvas",
     "Untitled 1.base",
